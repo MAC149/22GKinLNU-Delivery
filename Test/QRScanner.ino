@@ -1,7 +1,16 @@
 #include <SoftwareSerial.h>
-SoftwareSerial mySerial(10, 11); // RX, TX
 
-String Scan_QR()
+
+
+
+void QR_Init(int RXP,int TXP)
+{
+  SoftwareSerial mySerial(RXP, TXP); // RX, TX
+  String qr_code = "";
+  mySerial.begin(9600);
+}
+
+String QR_Getstring()
 {
   unsigned long starttime;
   String str = "";
@@ -21,19 +30,3 @@ String Scan_QR()
 }
 
 
-String qr_code = "";
-void setup() {
-
-  Serial.begin(115200);
-
-  mySerial.begin(9600);
-  
-}
-
-
-
-void loop() {
-  delay(3000);
-  qr_code = Scan_QR();
-  Serial.println(qr_code);
-}
