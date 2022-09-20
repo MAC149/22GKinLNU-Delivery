@@ -1,4 +1,4 @@
-#include <SoftwareSerial.h>
+
 
 
 
@@ -10,7 +10,7 @@ void QR_Init(int RXP,int TXP)
   mySerial.begin(9600);
 }
 
-String QR_Getstring()
+String QR_Getstring(SoftwareSerial mySerial)
 {
   unsigned long starttime;
   String str = "";
@@ -28,5 +28,3 @@ String QR_Getstring()
   }
   return str;
 }
-
-

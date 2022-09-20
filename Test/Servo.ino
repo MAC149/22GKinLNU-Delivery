@@ -31,7 +31,7 @@ void Servo1_Writems(int pos,int delayms)//pos 0-180
     delayMicroseconds(delayms);
 }
 
-void Servo2_Writems(int pos,int delays)//pos 0-180
+void Servo2_Writems(int pos,int delayms)//pos 0-180
 {
     servo2.write(pos);
     delayMicroseconds(delayms);
