@@ -1,7 +1,3 @@
-#include <Servo.h>
-
-Servo servo1;
-Servo servo2;
 
 void Servo1_Init(int dat)
 {
@@ -28,11 +24,11 @@ void Servo2_Writes(int pos,int delays)//pos 0-180
 void Servo1_Writems(int pos,int delayms)//pos 0-180
 {
     servo1.write(pos);
-    delayMicroseconds(delayms);
+    servo1.writeMicroseconds(delayms);
 }
 
 void Servo2_Writems(int pos,int delayms)//pos 0-180
 {
     servo2.write(pos);
-    delayMicroseconds(delayms);
+    servo2.writeMicroseconds(delayms);
 }

@@ -1,11 +1,9 @@
-class Sonar
+#include"Sonar.h" 
+Sonar::Sonar(int trig,int echo)
 {
-public:
-        int TrigPin;
-        int EchoPin;
-        void Sonar_Init();
-        u8 Sonar_Getdis();
-};
+  this->TrigPin=trig;
+  this->EchoPin=echo;
+}
 void Sonar::Sonar_Init()
 {
     pinMode(this->TrigPin,OUTPUT);
@@ -14,13 +12,13 @@ void Sonar::Sonar_Init()
 
 u8 Sonar::Sonar_Getdis()
 {
-    u8 dis;
+    double dis;
     digitalWrite(this->TrigPin,LOW);
     delayMicroseconds(2);
     digitalWrite(this->TrigPin,HIGH);
     delayMicroseconds(10);
     digitalWrite(this->TrigPin,LOW);
-    dis=pulseIn(this->EchoPin,HIGH)/58.0;//cm
-    dis=(int(dis*100.0)/100);
-    return dis;
+    dis=pulseIn(this->EchoPin,HIGH)/5.80;//cm
+    //dis=(u16(dis*100.0)/100);
+    return (u16)dis;
 }
